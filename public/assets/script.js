@@ -26,7 +26,6 @@ $(function () {
   $(".burger-form").on("submit", function (event) {
     event.preventDefault();
 
-
     if ($("#burger-name").val() === "") {
       console.log("Enter a burger name!");
     } else {

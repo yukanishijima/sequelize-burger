@@ -1,26 +1,43 @@
-const orm = require("../config/orm.js");
+// create a "Burger" model to match the database
+module.exports = function (sequelize, DataTypes) {
 
-const burger = {
-  selectAll: function (cb) {
-    orm.selectAll("burgers", function (res) {
-      cb(res);   //res = result from orm.js
-    });
-  },
-  insertOne: function (val, cb) {
-    orm.insertOne("burgers", "burger_name", val, function (res) {
-      cb(res);
-    });
-  },
-  updateOne: function (boolean, condition, cb) {
-    orm.updateOne("burgers", "devoured", boolean, condition, function (res) {
-      cb(res);
-    });
-  },
-  deleteOne: function (condition, cb) {
-    orm.deleteOne("burgers", condition, function (res) {
-      cb(res);
-    });
-  },
+  const Burger = sequelize.define("Burger", {
+    burger_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 30]
+      }
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+  });
+  return Burger;
+
 };
 
-module.exports = burger;
+
+// const Burger = sequelize.define("Burger", {
+//   burger_name: {
+//     type: DataTypes.STRING,
+//     allowNull: false,
+//     validate: {
+//       len: [1, 30]
+//     }
+//   },
+//   devoured: {
+//     type: DataTypes.BOOLEAN,
+//     defaultValue: false
+//   }
+// });
+
+
+// sync with the database
+// should it be in server.js?
+
+// Burger.sync();
+
+
+// module.exports = Burger;
