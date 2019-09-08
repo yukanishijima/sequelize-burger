@@ -4,7 +4,7 @@
 
 - All the naitive MySQL queries have been replaced with Sequelize queries.
 
-- A terminal command ```node run seed``` will populate the table with initial burger data instead of manually entering them into the database.   
+- A terminal command ```node run seed``` will populate the table with initial burger data instead of manually entering them into the database. (In order to make this command work, please enter your password for your databse inside the config.json file by replacing "YOUR PASSWORD".) 
 
 ## Technologies & Resources
 ```

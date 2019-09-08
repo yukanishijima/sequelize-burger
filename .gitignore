@@ -63,5 +63,3 @@ typings/
 #.DS_Store
 .DS_Store
 
-# for seeders
-config/config.json
