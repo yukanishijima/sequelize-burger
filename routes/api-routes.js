@@ -59,7 +59,7 @@ module.exports = function (app) {
 
 
   //delete devoured burger (when delete btn is clicked)
-  app.delete("/api/burgers/delete/:id", function (req, res) {
+  app.delete("/api/burgers/:id", function (req, res) {
     db.Burger.destroy({
       where: {
         id: req.params.id

@@ -50,7 +50,7 @@ $(function () {
     const id = $(this).data("id");
 
     let currentURL = window.location.origin;
-    $.ajax(currentURL + "/api/burgers/delete/" + id, {
+    $.ajax(currentURL + "/api/burgers/" + id, {
       type: "DELETE"
     }).then(function () {
       console.log(`id: ${id} is deleted!`);
